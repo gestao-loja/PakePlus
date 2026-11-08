@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Convites de cadastro — Gestão Loja</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="convites.css">
+
+</head>
+
+<body data-page="convites">
+
+  <div id="app" class="app">
+
+    <div id="menu"></div>
+
+    <main class="main">
+
+      <div class="topbar">
+        <div>
+          <h1>Convites de cadastro</h1>
+          <div class="muted" id="pageSubtitle"></div>
+        </div>
+
+        <div class="user-info">
+          <br>
+          <span id="userEmail"></span>
+        </div>
+      </div>
+
+      <div id="content" class="conv-page">
+
+        <div class="conv-card">
+          <div class="conv-title">Novo convite</div>
+          <div class="conv-sub">
+            Gere links de cadastro de uso único (válidos por 1 dia).
+            Apenas a loja matriz (loja 1) tem acesso a esta página.
+          </div>
+
+          <button class="conv-btn" id="btnGerar">
+            + Gerar novo convite
+          </button>
+
+          <div class="conv-link-box" id="linkBox">
+            <strong>Link gerado (válido por 24h):</strong>
+            <div class="conv-link-url" id="linkUrl"></div>
+            <div style="margin-top:10px;">
+              <button class="conv-btn conv-btn-small" id="btnCopiarRecente">
+                📋 Copiar link
+              </button>
+            </div>
+          </div>
+
+          <div id="convMsg"></div>
+        </div>
+
+        <div class="conv-card">
+          <div class="conv-title" style="font-size:16px;">Histórico de convites</div>
+          <div class="conv-sub" style="margin-bottom:10px;">
+            Convites ativos podem ser copiados mesmo após recarregar a página.
+          </div>
+
+          <div id="convLista">Carregando...</div>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+  <script src="convites.js"></script>
+
+</body>
+</html>
